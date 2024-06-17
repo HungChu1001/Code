@@ -7,6 +7,9 @@ import Doctors from "../pages/Doctors/Doctors";
 import DoctorDetails from "../pages/Doctors/DoctorDetails";
 
 import { Routes, Route } from "react-router-dom";
+import PatientList from "../components/PatientList/PatientList";
+import PatientRecordsList from "../components/PatientRecordsList/PatientRecordsList";
+import PatientRecord from "../components/PatientRecord/PatientRecord";
 
 const Routers = () => {
   return (
@@ -19,6 +22,9 @@ const Routers = () => {
       <Route path="/register" element={<Signup />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/patients" element={<PatientList />} />
+      <Route path="/records" element={<PatientRecordsList />} />
+      <Route path="/record/details" element={<PatientRecord />} />
     </Routes>
   );
 };
