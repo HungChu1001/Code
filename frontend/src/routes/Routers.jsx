@@ -10,6 +10,12 @@ import { Routes, Route } from "react-router-dom";
 import PatientList from "../components/PatientList/PatientList";
 import PatientRecordsList from "../components/PatientRecordsList/PatientRecordsList";
 import PatientRecord from "../components/PatientRecord/PatientRecord";
+import PatientSignUp from "../pages/Patients/PatientSignUp";
+import AppointmentForm from "../pages/Patients/AppointmentForm";
+import AppointmentTable from "../pages/Patients/AppointmentTable";
+import Takelist from "../pages/Doctors/Takelist";
+import PersonalInfoForm from "../pages/Patients/PersonalnfoForm";
+import DoctorInfoForm from "../pages/Doctors/DoctorInfoForm";
 
 const Routers = () => {
   return (
@@ -23,6 +29,12 @@ const Routers = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/services" element={<Services />} />
       <Route path="/patients" element={<PatientList />} />
+      <Route path="/patient/signup" element={<PatientSignUp />} />
+      <Route path="/patient/appointment" element={<AppointmentForm />} />
+      <Route path="/patient/appointmenttable" element={<AppointmentTable />} />
+      <Route path="/patient/info" element={<PersonalInfoForm />} />
+      <Route path="/doctor/info" element={<DoctorInfoForm />} />
+      <Route path="/doctor/takelist" element={<Takelist />} />
       <Route path="/records" element={<PatientRecordsList />} />
       <Route path="/record/details" element={<PatientRecord />} />
     </Routes>
