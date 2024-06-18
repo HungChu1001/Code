@@ -10,7 +10,6 @@ import { Routes, Route } from "react-router-dom";
 import PatientList from "../components/PatientList/PatientList";
 import PatientRecordsList from "../components/PatientRecordsList/PatientRecordsList";
 import PatientRecord from "../components/PatientRecord/PatientRecord";
-import PatientDetails from "../components/PatientDetails/PatientDetails";
 
 const Routers = () => {
   return (
@@ -26,7 +25,6 @@ const Routers = () => {
       <Route path="/patients" element={<PatientList />} />
       <Route path="/records" element={<PatientRecordsList />} />
       <Route path="/record/details" element={<PatientRecord />} />
-      <Route path="/patient" element={<PatientDetails />} />
     </Routes>
   );
 };

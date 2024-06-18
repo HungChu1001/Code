@@ -1,5 +1,7 @@
+// src/components/PatientRecordsList/PatientRecordsList.jsx
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { patientsData } from "../../data/patientsData";
 
 const PatientRecordsList = () => {
   const location = useLocation();
@@ -7,11 +9,11 @@ const PatientRecordsList = () => {
   const patientId = queryParams.get("patientId");
   const navigate = useNavigate();
 
-  const records = [
-    { id: "REC-001", date: "2023-01-01", summary: "Tóm tắt bệnh án 1" },
-    { id: "REC-002", date: "2023-02-01", summary: "Tóm tắt bệnh án 2" },
-    { id: "REC-003", date: "2023-03-01", summary: "Tóm tắt bệnh án 3" },
-  ];
+  const patient = patientsData.find((p) => p.id === patientId);
+
+  if (!patient) {
+    return <div>Patient not found</div>;
+  }
 
   return (
     <div className="p-6 bg-white shadow-md rounded-md relative">
@@ -23,7 +25,9 @@ const PatientRecordsList = () => {
           &larr; Quay lại
         </button>
       </div>
-      <h2 className="text-2xl font-bold mb-4">Hồ Sơ Bệnh Án - {patientId}</h2>
+      <h2 className="text-2xl font-bold mb-4">
+        Hồ Sơ Bệnh Án - {patient.name}
+      </h2>
       <div className="mb-4">
         <input
           type="text"
@@ -32,7 +36,7 @@ const PatientRecordsList = () => {
         />
       </div>
       <div className="bg-white shadow-md rounded">
-        {records.map((record) => (
+        {patient.records.map((record) => (
           <div
             key={record.id}
             className="flex justify-between items-center p-4 border-b"
