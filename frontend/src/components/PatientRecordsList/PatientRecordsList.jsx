@@ -1,19 +1,28 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const PatientRecordsList = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const patientId = queryParams.get("patientId");
+  const navigate = useNavigate();
 
   const records = [
-    { id: "REC-001", date: "2023-01-01", summary: "Summary 1" },
-    { id: "REC-002", date: "2023-02-01", summary: "Summary 2" },
-    { id: "REC-003", date: "2023-03-01", summary: "Summary 3" },
+    { id: "REC-001", date: "2023-01-01", summary: "Tóm tắt bệnh án 1" },
+    { id: "REC-002", date: "2023-02-01", summary: "Tóm tắt bệnh án 2" },
+    { id: "REC-003", date: "2023-03-01", summary: "Tóm tắt bệnh án 3" },
   ];
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-md">
+    <div className="p-6 bg-white shadow-md rounded-md relative">
+      <div className="mb-4">
+        <button
+          onClick={() => navigate(-1)}
+          className="bg-black text-white px-3 py-1 rounded"
+        >
+          &larr; Quay lại
+        </button>
+      </div>
       <h2 className="text-2xl font-bold mb-4">Hồ Sơ Bệnh Án - {patientId}</h2>
       <div className="mb-4">
         <input

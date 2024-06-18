@@ -1,13 +1,20 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const PatientRecord = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const recordId = queryParams.get("recordId");
+  const navigate = useNavigate();
 
   return (
-    <div className="p-6 bg-white shadow-md rounded-md">
+    <div className="p-6 bg-white shadow-md rounded-md relative">
+      <button
+        onClick={() => navigate(-1)}
+        className="bg-black text-white px-3 py-1 rounded"
+      >
+        &larr; Quay lại
+      </button>
       <div className="text-center mb-6">
         <h1 className="text-xl font-bold">
           CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
