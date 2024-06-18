@@ -19,7 +19,7 @@ const AppointmentForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center">
       <form
         className="bg-gray-200 p-8 rounded-md shadow-md w-full max-w-lg"
         onSubmit={handleSubmit}
@@ -71,7 +71,7 @@ const AppointmentForm = () => {
         </div>
         <div className="text-center">
           <button type="submit" className="bg-black text-white p-2 rounded-md">
-            Hẹn
+            Hẹn lịch khám
           </button>
         </div>
       </form>

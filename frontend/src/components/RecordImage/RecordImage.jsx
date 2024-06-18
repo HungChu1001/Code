@@ -1,24 +1,22 @@
 // src/components/RecordImages/RecordImages.jsx
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-
-const recordImagesData = {
-  "BA-001": "/image.png",
-  "BA-002": "/image.png",
-  "BA-003": "/image.png",
-};
-
+import { patientsData } from "../../data/patientsData";
 const RecordImage = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const recordId = queryParams.get("recordId");
   const navigate = useNavigate();
 
-  const imageUrl = recordImagesData[recordId];
+  const record = patientsData
+    .flatMap((p) => p.records)
+    .find((r) => r.id === recordId);
 
-  if (!imageUrl) {
+  if (!record) {
     return <div>Record image not found</div>;
   }
+
+  const { imageUrl } = record;
 
   return (
     <div className="p-6 bg-white shadow-md rounded-md relative">
@@ -66,9 +64,7 @@ const RecordImage = () => {
         <img
           src={imageUrl}
           alt={`Record ${recordId}`}
-          width={100}
-          height={100}
-          className="justify-center"
+          className="w-full h-auto"
         />
       </div>
       <div className="mb-6">

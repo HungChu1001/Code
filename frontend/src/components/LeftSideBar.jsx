@@ -11,6 +11,12 @@ const LeftSidebar = () => {
       text: "Tìm kiếm bệnh nhân",
       link: "/patients",
     },
+    {
+      srcImg: "/calendar.svg",
+      alt: "calendar",
+      text: "Hẹn lịch khám",
+      link: "/patient/appointment",
+    },
   ];
   return (
     <div className="w-64 h-full fixed top-0 left-0 bg-gray-800 text-white">

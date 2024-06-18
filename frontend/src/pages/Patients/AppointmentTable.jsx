@@ -22,7 +22,6 @@ const appointments = [
     priority: "High",
     date: "Dec 5",
   },
-  // Add more tasks here...
 ];
 
 const AppointmentsTable = () => {
