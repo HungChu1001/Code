@@ -10,7 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import PatientList from "../components/PatientList/PatientList";
 import PatientRecordsList from "../components/PatientRecordsList/PatientRecordsList";
 import PatientRecord from "../components/PatientRecord/PatientRecord";
-
+import RecordImage from "../components/RecordImage/RecordImage";
 const Routers = () => {
   return (
     <Routes>
@@ -25,6 +25,7 @@ const Routers = () => {
       <Route path="/patients" element={<PatientList />} />
       <Route path="/records" element={<PatientRecordsList />} />
       <Route path="/record/details" element={<PatientRecord />} />
+      <Route path="/record/images" element={<RecordImage />} />
     </Routes>
   );
 };
