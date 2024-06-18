@@ -1,7 +1,8 @@
+// src/components/PatientCard/PatientCard.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PatientCard = ({ id, name }) => {
+const PatientCard = ({ id, name, onShowDetails }) => {
   return (
     <div className="flex justify-between items-center p-4 border-b">
       <div className="flex-1">
@@ -11,14 +12,15 @@ const PatientCard = ({ id, name }) => {
       <div className="flex space-x-2">
         <Link to={`/records?patientId=${id}`}>
           <button className="bg-black text-white px-3 py-1 rounded">
-            Xem bệnh án
+            Danh sách bệnh án
           </button>
         </Link>
-        <Link to={`/patient/${id}`}>
-          <button className="bg-black text-white px-3 py-1 rounded">
-            Thông tin
-          </button>
-        </Link>
+        <button
+          onClick={() => onShowDetails(id)}
+          className="bg-black text-white px-3 py-1 rounded"
+        >
+          Thông tin bệnh nhân
+        </button>
       </div>
     </div>
   );

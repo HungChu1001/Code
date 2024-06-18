@@ -1,19 +1,28 @@
-// src/PatientList/PatientList.jsx
+// src/components/PatientList/PatientList.jsx
 import React, { useState } from "react";
 import PatientCard from "./PatientCard";
+import PatientDetailsModal from "../PatientDetailsModal/PatientDetailsModal";
 
 const patientsData = [
-  { id: "FIG-123", name: "Task 1", recordLink: "Click", infoLink: "Click" },
-  { id: "FIG-122", name: "Task 2", recordLink: "Click", infoLink: "Click" },
-  // Add more patient data here
+  { id: "bn1", name: "Hoang Duy Anh" },
+  { id: "bn2", name: "Hoang Thi Kieu Thuong" },
 ];
 
 const PatientList = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedPatientId, setSelectedPatientId] = useState(null);
 
   const filteredPatients = patientsData.filter((patient) =>
     patient.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  const handleShowDetails = (id) => {
+    setSelectedPatientId(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPatientId(null);
+  };
 
   return (
     <div className="p-6">
@@ -30,11 +39,16 @@ const PatientList = () => {
             key={patient.id}
             id={patient.id}
             name={patient.name}
-            recordLink={patient.recordLink}
-            infoLink={patient.infoLink}
+            onShowDetails={handleShowDetails}
           />
         ))}
       </div>
+      {selectedPatientId && (
+        <PatientDetailsModal
+          patientId={selectedPatientId}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };
