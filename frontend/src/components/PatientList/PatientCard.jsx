@@ -6,8 +6,8 @@ const PatientCard = ({ id, name, onShowDetails }) => {
   return (
     <div className="flex justify-between items-center p-4 border-b">
       <div className="flex-1">
-        <div className="text-lg font-bold">{id}</div>
-        <div className="text-sm">{name}</div>
+        <div className="text-lg font-bold">{name}</div>
+        <div className="text-sm">MSBN: {id}</div>
       </div>
       <div className="flex space-x-2">
         <Link to={`/records?patientId=${id}`}>

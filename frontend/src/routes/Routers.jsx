@@ -12,7 +12,7 @@ import PatientRecordsList from "../components/PatientRecordsList/PatientRecordsL
 import PatientRecord from "../components/PatientRecord/PatientRecord";
 import RecordImage from "../components/RecordImage/RecordImage";
 import PatientSignUp from "../pages/Patients/PatientSignUp";
-import AppointmentForm from "../pages/Patients/AppointmentForm";
+import AppointmentForm from "../pages/Appointment/AppointmentForm";
 import AppointmentTable from "../pages/Patients/AppointmentTable";
 import Takelist from "../pages/Doctors/Takelist";
 import PersonalInfoForm from "../pages/Patients/PersonalnfoForm";
@@ -31,7 +31,7 @@ const Routers = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/patients" element={<PatientList />} />
       <Route path="/patient/signup" element={<PatientSignUp />} />
-      <Route path="/patient/appointment" element={<AppointmentForm />} />
+      <Route path="/doctor/setappointment" element={<AppointmentForm />} />
       <Route path="/patient/appointmenttable" element={<AppointmentTable />} />
       <Route path="/patient/info" element={<PersonalInfoForm />} />
       <Route path="/doctor/info" element={<DoctorInfoForm />} />

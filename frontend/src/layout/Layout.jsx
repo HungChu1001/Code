@@ -13,7 +13,8 @@ const Layout = () => {
       {location.pathname.startsWith("/patients") ||
       location.pathname.startsWith("/records") ||
       location.pathname.startsWith("/record") ||
-      location.pathname.startsWith("/patient") ? (
+      location.pathname.startsWith("/patient") ||
+      location.pathname.startsWith("/doctor") ? (
         <div className="flex">
           <LeftSidebar />
           <main className="ml-64 flex-1 p-4">

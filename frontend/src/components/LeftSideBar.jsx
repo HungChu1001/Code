@@ -15,7 +15,7 @@ const LeftSidebar = () => {
       srcImg: "/calendar.svg",
       alt: "calendar",
       text: "Hẹn lịch khám",
-      link: "/patient/appointment",
+      link: "/doctor/setappointment",
     },
   ];
   return (
